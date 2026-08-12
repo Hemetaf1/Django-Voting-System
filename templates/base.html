@@ -1,0 +1,83 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'fa' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% trans "نمایشگاه آفتاب" %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      font-family: Vazir, sans-serif;
+      background: linear-gradient(to bottom right, #faf0ca, #f4d35e, #0d3b66);
+      min-height: 100vh;
+    }
+
+    body {
+      /* مسیر فایل پس‌زمینه در فولدر static */
+      background-image: url("{% static 'poster.png' %}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      /* fallback رنگ در صورت مشکل لود عکس */
+      background-color: #0d3140;
+    }
+    /* یک لایهٔ نیمه‌شفاف روی پس‌زمینه (اختیاری) */
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(13,49,64,0.6);
+      pointer-events: none;
+      z-index: -1;
+    }
+    /* Language switcher styles */
+    .lang-switcher {
+      position: absolute;
+      top: 1rem;
+    }
+    html[dir="rtl"] .lang-switcher {
+      left: 1rem;
+    }
+    html[dir="ltr"] .lang-switcher {
+      right: 1rem;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+  <div class="bg-overlay"></div>
+
+  <header class="p-4 bg-white/50 backdrop-blur relative">
+    <div class="lang-switcher">
+      <form action="{% url 'set_language' %}" method="post" class="inline">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}">
+        <select name="language" onchange="this.form.submit()" class="bg-white/80 backdrop-blur px-2 py-1 rounded">
+          {% get_current_language as CURRENT_LANGUAGE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for lang_code, lang_name in LANGUAGES %}
+            <option value="{{ lang_code }}" {% if lang_code == CURRENT_LANGUAGE %}selected{% endif %}>
+              {{ lang_name }}
+            </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+    <h1 class="text-3xl text-center font-bold text-[#0d3b66]">{% trans "نمایشگاه آفتاب" %}</h1>
+  </header>
+
+  <main class="flex-1">
+    {% block content %}
+    <!-- محتوای page-specific اینجا رندر می‌شود -->
+    {% endblock %}
+  </main>
+
+  <footer class="p-4 text-center text-gray-600 text-sm">
+    {% blocktrans %}© ۲۰۲۵ نمایشگاه آفتاب{% endblocktrans %}
+  </footer>
+
+  <!-- اسکریپت‌های مشترک (مثلاً Alpine و HTMX) -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

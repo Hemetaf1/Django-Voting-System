@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-28 02:43+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\aftaab\settings.py:121
+msgid "Persian"
+msgstr ""
+
+#: .\aftaab\settings.py:122
+msgid "English"
+msgstr ""
+
+#: .\templates\base.html:7 .\templates\base.html:66
+msgid "نمایشگاه آفتاب"
+msgstr ""
+
+#: .\templates\base.html:76
+msgid "© ۲۰۲۵ نمایشگاه آفتاب"
+msgstr ""
+
+#: .\voting\models.py:6
+msgid "فنی مهندسی"
+msgstr ""
+
+#: .\voting\models.py:7
+msgid "علوم پایه و میان رشته‌ای"
+msgstr ""
+
+#: .\voting\models.py:8
+msgid "علوم تجربی"
+msgstr ""
+
+#: .\voting\models.py:9
+msgid "علوم انسانی"
+msgstr ""
+
+#: .\voting\models.py:10
+msgid "آثار هنری"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:11
+msgid "به نمایشگاه آفتاب خوش آمدید"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:13
+#, python-format
+msgid "شما %(votes)s رأی در اختیار دارید"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:26
+msgid "حوزهٔ مورد نظر را انتخاب کنید"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:42
+msgid "← بازگشت به حوزه‌ها"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:45
+msgid "زیرمجموعه‌های"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:89
+msgid "سقف ۳ رأی شما تمام شده است."
+msgstr ""
+
+#: .\voting\templates\voting\index.html:92
+msgid "مطمئن هستید می‌خواهید رأی دهید؟"
+msgstr ""
+
+#: .\voting\templates\voting\index.html:104
+msgid "سقف رأی این IP تکمیل شده است."
+msgstr ""

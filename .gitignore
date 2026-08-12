@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.sqlite3
+db.sqlite3
+media/project_images/
+*.log
+local_settings.py
+
+# Environment
+.env
+.env.*
+.venv/
+venv/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+.DS_Store
+
+# Node
+node_modules/
+theme/static_src/node_modules/
+
+# Build
+staticfiles/
+*.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,191 @@
+[
+  {
+    "model": "voting.section",
+    "pk": 1,
+    "fields": {
+      "name": "طراحی سایت",
+      "category": "ENG",
+      "order": 1
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 2,
+    "fields": {
+      "name": "رباتیک",
+      "category": "ENG",
+      "order": 2
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 3,
+    "fields": {
+      "name": "ریوساز",
+      "category": "ENG",
+      "order": 3
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 4,
+    "fields": {
+      "name": "برنامه نویسی",
+      "category": "ENG",
+      "order": 4
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 5,
+    "fields": {
+      "name": "بیو انفورماتیک",
+      "category": "ENG",
+      "order": 5
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 6,
+    "fields": {
+      "name": "هوش مصنوعی",
+      "category": "ENG",
+      "order": 6
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 7,
+    "fields": {
+      "name": "نجوم",
+      "category": "SCI",
+      "order": 1
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 8,
+    "fields": {
+      "name": "اخترزیست",
+      "category": "SCI",
+      "order": 2
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 9,
+    "fields": {
+      "name": "اخترفیزیک",
+      "category": "SCI",
+      "order": 3
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 10,
+    "fields": {
+      "name": "ریاضی",
+      "category": "SCI",
+      "order": 4
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 11,
+    "fields": {
+      "name": "پدیدار",
+      "category": "SCI",
+      "order": 5
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 12,
+    "fields": {
+      "name": "ژنتیک",
+      "category": "EXP",
+      "order": 1
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 13,
+    "fields": {
+      "name": "داروسازی",
+      "category": "EXP",
+      "order": 2
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 14,
+    "fields": {
+      "name": "زیست",
+      "category": "EXP",
+      "order": 3
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 15,
+    "fields": {
+      "name": "سلول بنیادی",
+      "category": "EXP",
+      "order": 4
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 16,
+    "fields": {
+      "name": "شیمی پژوهی",
+      "category": "EXP",
+      "order": 5
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 17,
+    "fields": {
+      "name": "مباحثه علمی",
+      "category": "HUM",
+      "order": 1
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 18,
+    "fields": {
+      "name": "نویسندگی",
+      "category": "HUM",
+      "order": 2
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 19,
+    "fields": {
+      "name": "خلاقیت تصویری",
+      "category": "ART",
+      "order": 1
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 20,
+    "fields": {
+      "name": "معماری",
+      "category": "ART",
+      "order": 2
+    }
+  },
+  {
+    "model": "voting.section",
+    "pk": 21,
+    "fields": {
+      "name": "انتخاب آزاد",
+      "category": "ART",
+      "order": 3
+    }
+  }
+]

@@ -1,0 +1,6 @@
+{% for sec in sections %}
+  <a href="{% url 'subcategory' sec.category sec.slug %}"
+     class="p-4 rounded-lg bg-[#faf0ca] text-[#0d3b66] hover:bg-[#f4d35e] block text-center">
+    {{ sec.name }}
+  </a>
+{% endfor %}

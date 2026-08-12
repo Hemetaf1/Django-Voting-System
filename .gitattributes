@@ -1,0 +1,15 @@
+# Ensure consistent line endings and text handling across platforms
+* text=auto
+
+# Python files
+*.py text eol=lf
+
+# Markdown and text files
+*.md text
+*.txt text
+
+# Ignore binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary

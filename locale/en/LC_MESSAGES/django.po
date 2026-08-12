@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-28 02:17+0330\n"
+"PO-Revision-Date: 2025-05-28 02:20+0330\n"
+"Last-Translator: Admin <admin@example.com>\n"
+"Language-Team: English <EN@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\aftaab\settings.py:121
+msgid "Persian"
+msgstr "Persian"
+
+#: .\aftaab\settings.py:122
+msgid "English"
+msgstr "English"
+
+#: .\templates\base.html:7 .\templates\base.html:66
+msgid "نمایشگاه آفتاب"
+msgstr "Aftaab Exhibition"
+
+#: .\templates\base.html:76
+msgid "© ۲۰۲۵ نمایشگاه آفتاب"
+msgstr "© 2025 Aftaab Exhibition"
+
+#: .\voting\models.py:6
+msgid "فنی مهندسی"
+msgstr "Engineering"
+
+#: .\voting\models.py:7
+msgid "علوم پایه و میان رشته‌ای"
+msgstr "Basic Sciences & Interdisciplinary"
+
+#: .\voting\models.py:8
+msgid "علوم تجربی"
+msgstr "Experimental Sciences"
+
+#: .\voting\models.py:9
+msgid "علوم انسانی"
+msgstr "Humanities"
+
+#: .\voting\models.py:10
+msgid "آثار هنری"
+msgstr "Artworks"
+
+#: .\voting\templates\voting\index.html:11
+#, fuzzy
+#| msgid "نمایشگاه آفتاب"
+msgid "به نمایشگاه آفتاب خوش آمدید"
+msgstr "Welcome to Aftaab Exhibition"
+
+#: .\voting\templates\voting\index.html:13
+#, python-format
+msgid "شما %(votes)s رأی در اختیار دارید"
+msgstr "You have %(votes)s votes remaining"
+
+#: .\voting\templates\voting\index.html:26
+msgid "حوزهٔ مورد نظر را انتخاب کنید"
+msgstr "Select your desired field"
+
+#: .\voting\templates\voting\index.html:42
+msgid "← بازگشت به حوزه‌ها"
+msgstr "← Back to fields"
+
+#: .\voting\templates\voting\index.html:45
+msgid "زیرمجموعه‌های"
+msgstr "Subcategories of"
+
+#: .\voting\templates\voting\index.html:89
+msgid "سقف ۳ رأی شما تمام شده است."
+msgstr "You have used all your 3 votes."
+
+#: .\voting\templates\voting\index.html:92
+msgid "مطمئن هستید می‌خواهید رأی دهید؟"
+msgstr "Are you sure you want to vote?"
+
+#: .\voting\templates\voting\index.html:104
+msgid "سقف رأی این IP تکمیل شده است."
+msgstr "This IP has reached its voting limit."

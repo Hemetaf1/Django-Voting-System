@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div id="main-content" class="container mx-auto p-6" x-data="voteApp()">
+  <div
+    x-init="initCategories()"
+    class="w-full max-w-4xl mx-auto bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-8">
+    <!-- Header -->
+    <h1 class="text-4xl font-extrabold text-center text-[#0d3b66] mb-4">{% trans "به نمایشگاه آفتاب خوش آمدید" %}</h1>
+    <p class="text-center text-lg text-[#0d3b66] mb-6">
+      {% blocktrans trimmed with votes=3 %}
+      شما {{ votes }} رأی در اختیار دارید
+      {% endblocktrans %}
+    </p>
+
+    <!-- Categories data -->
+    <script id="cats-data" type="application/json">
+      {{ cats_data|safe }}
+    </script>
+
+    <!-- Step 1: Categories -->
+    <template x-if="!selectedCategory">
+      <div>
+        <h2 class="text-2xl font-bold text-center mb-4 text-[#0d3b66]">{% trans "حوزهٔ مورد نظر را انتخاب کنید" %}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <template x-for="cat in categories" :key="cat.value">
+            <button @click="selectedCategory = cat.value"
+              class="p-6 rounded-xl bg-gradient-to-br from-[#f4d35e] to-[#0d3b66] text-white text-xl font-semibold hover:scale-105 transition">
+              <span x-text="cat.label"></span>
+            </button>
+          </template>
+        </div>
+      </div>
+    </template>
+
+    <!-- Step 2: Subcategories -->
+    <template x-if="selectedCategory">
+      <div>
+        <button @click="selectedCategory = null" class="mb-4 text-sm text-[#0d3b66] hover:underline">
+          {% trans "← بازگشت به حوزه‌ها" %}
+        </button>
+        <h2 class="text-2xl font-bold text-center mb-4 text-[#0d3b66]">
+          {% trans "زیرمجموعه‌های" %} <span x-text="getCurrentCategoryLabel()"></span>
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <template x-for="sub in currentSubcategories" :key="sub.slug">
+            <a
+              :href="`/${LANGUAGE_CODE}/subcategory/${selectedCategory}/${sub.slug}/`"
+              class="p-4 rounded-lg bg-[#faf0ca] text-[#0d3b66] font-medium hover:bg-[#f4d35e] transition block text-center"
+            >
+              <span x-text="sub.name"></span>
+            </a>
+          </template>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+<script>
+function voteApp() {
+  return {
+    categories: [],
+    selectedCategory: null,
+    votesRemaining: 3,
+
+    initCategories() {
+      try {
+        this.categories = JSON.parse(document.getElementById('cats-data').textContent || '[]');
+      } catch (_) {
+        this.categories = [];
+      }
+    },
+
+    getCurrentCategoryLabel() {
+      const cat = this.categories.find(c => c.value === this.selectedCategory);
+      return cat?.label || '';
+    },
+
+    get currentSubcategories() {
+      const cat = this.categories.find(c => c.value === this.selectedCategory);
+      return cat?.subcategories || [];
+    },
+
+    vote(projectId) {
+      if(this.votesRemaining <= 0){
+        alert('{% trans "سقف ۳ رأی شما تمام شده است." %}');
+        return;
+      }
+      if(!confirm('{% trans "مطمئن هستید می‌خواهید رأی دهید؟" %}')) return;
+
+      htmx.ajax('POST', `/vote/${projectId}/`, {
+        target: `#vote-btn-${projectId}`,
+        swap: 'outerHTML',
+        handler: (xhr, elt) => {
+          if (xhr.status === 200){
+            this.votesRemaining--;
+            if(this.votesRemaining === 0){
+              document.querySelectorAll('.vote-btn').forEach(b => b.setAttribute('disabled', ''));
+            }
+          } else if (xhr.status === 429){
+            alert('{% trans "سقف رأی این IP تکمیل شده است." %}');
+          }
+        }
+      });
+    }
+  };
+}
+</script>
+{% endblock %}
+
+
+cd /www/wwwroot/aftab
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
