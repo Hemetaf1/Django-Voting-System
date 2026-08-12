@@ -1,4 +1,4 @@
-# Aftaab
+# Django-Voting-System
 
 Aftaab is a Django-based project with localization and voting features. This repository is prepared for public sharing while keeping confidential media data and local environment files private.
 
@@ -49,4 +49,5 @@ python manage.py runserver
 - Use environment variables for any secret settings.
 
 ## Repository name
-This project is intended to be published under the GitHub repository name `hemetaf1`.
+This project is published under the GitHub repository name `Django-Voting-System`.
+
