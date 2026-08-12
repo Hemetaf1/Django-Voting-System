@@ -6,6 +6,7 @@ __pycache__/
 # Django
 *.sqlite3
 db.sqlite3
+media/
 media/project_images/
 *.log
 local_settings.py
@@ -13,6 +14,7 @@ local_settings.py
 # Environment
 .env
 .env.*
+!.env.example
 .venv/
 venv/
 
